@@ -60,7 +60,7 @@ export class UploadImage implements OnInit {
 
     const maxSize = 10 * 1024 * 1024; // 10 MB
     if (file.size > maxSize) {
-      this.showAlert('error', 'La imagen no debe exceder 10MB');
+      this.errorMessage.set('La imagen no debe exceder 10MB');
       return;
     }
 
