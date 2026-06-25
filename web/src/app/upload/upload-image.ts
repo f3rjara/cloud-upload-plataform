@@ -27,7 +27,6 @@ interface Alert {
 })
 export class UploadImage implements OnInit {
   private readonly http = inject(HttpClient);
-  readonly auth = inject(AuthService);
   private alertTimer: ReturnType<typeof setTimeout> | null = null;
 
   readonly selectedFile = signal<File | null>(null);

@@ -49,13 +49,17 @@
   <!-- Alerta unica (error / success / deleted) -->
   @if (alert(); as a) {
   <div class="alert alert-{{ a.type }}">
-    @switch (a.type) { @case ('error') {
-    <img src="/svg/warning.svg" class="alert-icon" alt="" />
-    } @case ('success') {
-    <img src="/svg/check.svg" class="alert-icon" alt="" />
-    } @case ('deleted') {
-    <img src="/svg/trash.svg" class="alert-icon" alt="" />
-    } }
+    @switch (a.type) {
+      @case ('error') {
+        <img src="/svg/warning.svg" class="alert-icon" alt="" />
+      }
+      @case ('success') {
+        <img src="/svg/check.svg" class="alert-icon" alt="" />
+      }
+      @case ('deleted') {
+        <img src="/svg/trash.svg" class="alert-icon" alt="" />
+      }
+    }
     <span>{{ a.message }}</span>
   </div>
   }
@@ -131,9 +135,9 @@
           aria-label="Eliminar imagen"
         >
           @if (deletingKey() === item.key) {
-          <span class="spinner spinner-sm"></span>
+            <span class="spinner spinner-sm"></span>
           } @else {
-          <img src="/svg/trash.svg" class="delete-icon" alt="" />
+            <img src="/svg/trash.svg" class="delete-icon" alt="" />
           }
         </button>
       </div>
