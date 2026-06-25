@@ -8,6 +8,7 @@ import {
 import { HttpClient } from '@angular/common/http';
 import { firstValueFrom } from 'rxjs';
 import type { ImageProcessResult, ThumbnailItem } from '@org/models';
+import { AuthService } from '../auth/auth.service';
 
 const API_URL = 'http://localhost:3000';
 
@@ -26,6 +27,7 @@ interface Alert {
 })
 export class UploadImage implements OnInit {
   private readonly http = inject(HttpClient);
+  readonly auth = inject(AuthService);
   private alertTimer: ReturnType<typeof setTimeout> | null = null;
 
   readonly selectedFile = signal<File | null>(null);
